@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "celery-eventlet-backend-imports"
+version = "0.1.0"
+description = ""
+authors = ["Xinyang Chen <me@chenxy.tech>"]
+readme = "README.md"
+packages = [{include = "celery_eventlet_backend_imports"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+celery = {extras = ["eventlet", "redis"], version = "^5.2.7"}
+
+[tool.poetry.group.dev.dependencies]
+flake8 = "^6.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

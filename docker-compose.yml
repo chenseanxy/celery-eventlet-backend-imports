@@ -1,0 +1,22 @@
+version: "3"
+services:
+  redis:
+    image: redis
+  worker:
+    build: .
+    entrypoint: 
+    - celery
+    - -A
+    - app
+    - worker
+    - --loglevel=INFO
+    - -P
+    - eventlet
+    - -c
+    - '128'
+  sender:
+    build: .
+    entrypoint: 
+    - python3
+    - dispatch.py
+    
