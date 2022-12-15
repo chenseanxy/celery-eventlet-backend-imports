@@ -13,7 +13,7 @@ services:
     - -P
     - eventlet
     - -c
-    - '128'
+    - '4'
   sender:
     build: .
     entrypoint: 
